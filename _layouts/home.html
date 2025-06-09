@@ -1,37 +1,27 @@
-<!-- File: _layouts/home.html -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{{ page.subtitle | default: site.description }}">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <div class="navbar">
-      <div class="brand">{{ site.title }}</div>
-      <nav>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/issues/' | relative_url }}">Issues</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      </nav>
-    </div>
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.subtitle }}</h2>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    {{ content }}
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
-  </footer>
-</body>
+<html lang="{{ page.lang | default: 'en' }}" dir="{{ page.dir | default: 'ltr' }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ page.subtitle | default: site.description }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header>
+      <div class="language-switcher" style="text-align: right; padding: 0.5rem;">
+        <a href="/">EN</a> |
+        <a href="/fr/">FR</a> |
+        <a href="/ar/">ع</a>
+      </div>
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.subtitle }}</h2>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+    </footer>
+  </body>
 </html>
