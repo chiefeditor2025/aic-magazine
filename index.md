@@ -1,3 +1,4 @@
+---
 layout: home
 title: "AIC Scientific Magazine"
 subtitle: "Official site for AIC Scientific Magazine"
