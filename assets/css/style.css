@@ -1,10 +1,15 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background: #fdfdfd;
-  color: #333;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+  padding: 2rem;
 }
-header, footer {
-  text-align: center;
-  margin-bottom: 20px;
+
+h1 {
+  color: #0059b3;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
 }
