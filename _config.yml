@@ -1,7 +1,10 @@
 title: "AIC Scientific Magazine"
-description: "The official GitHub Pages site for AIC Magazine"
+email: editor@aic-magazine.org
+description: "الموقع الرسمي لمجلة AIC العلمية"
+baseurl: "/aic-magazine"
+url: "https://chiefeditor2025.github.io"
 theme: minima
-markdown: kramdown
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
