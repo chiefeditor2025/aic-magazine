@@ -8,3 +8,8 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+title: AIC Scientific Magazine
+description: Voice of applied and industrial chemistry
+markdown: kramdown
+permalink: pretty
+theme: minima  # أو اتركه فارغًا لو تستخدم قالبك الخاص
