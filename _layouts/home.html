@@ -7,43 +7,18 @@
     <meta name="description" content="{{ page.subtitle | default: site.description }}">
     <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: #f9f9f9;
-        color: #333;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      h1 {
-        font-size: 2.2rem;
-        margin-bottom: 0.3rem;
-        color: #006699;
-      }
-      h2 {
-        font-size: 1.2rem;
-        color: #444;
-        font-weight: normal;
-      }
-      main {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-      footer {
-        margin-top: 4rem;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #aaa;
-      }
-    </style>
   </head>
   <body>
     <header>
+      <div class="navbar">
+        <div class="brand">{{ site.title }}</div>
+        <nav>
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/issues/' | relative_url }}">Issues</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </nav>
+      </div>
       <h1>{{ page.title }}</h1>
       <h2>{{ page.subtitle }}</h2>
     </header>
