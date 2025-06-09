@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{ page.title }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #005aa7;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: #777;
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <h1>{{ page.title }}</h1>
-  <h2>{{ page.subtitle }}</h2>
-  <div>{{ content }}</div>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.subtitle }}</h2>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    &copy; {{ site.time | date: "%Y" }} AIC Scientific Magazine
+  </footer>
 </body>
 </html>
