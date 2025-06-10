@@ -1,8 +1,3 @@
-site_title: "مجلة AIC"
-welcome_message: "مرحبًا بكم في مجلتنا العلمية متعددة اللغات"
-latest_articles: "أحدث المقالات"
-menu:
-  home: "الرئيسية"
-  about: "حول"
-  contact: "اتصل بنا"
-footer: "جميع الحقوق محفوظة"
+welcome_message: "مرحبًا بكم في الموقع الرسمي لمجلة AIC."
+about_section: "عن المجلة: تقدم مجلة AIC آخر الأخبار والأبحاث العلمية."
+contact_section: "اتصل بنا: يمكنك الوصول إلينا عبر البريد الإلكتروني contact@aic-magazine.com."
