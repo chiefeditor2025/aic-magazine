@@ -1,6 +1,20 @@
-hello: "Bienvenue"
-subtitle: "Un magazine scientifique multilingue"
+site_title: "Magazine AIC"
+subtitle: "Une revue scientifique multilingue"
+welcome_message: "Bienvenue dans le Magazine AIC"
+
 menu:
   home: "Accueil"
   about: "À propos"
   contact: "Contact"
+
+home:
+  title: "Accueil"
+  latest_articles: "Derniers articles"
+  read_more: "Lire plus"
+
+footer: "Tous droits réservés."
+language:
+  select: "Langue"
+  en: "Anglais"
+  fr: "Français"
+  ar: "Arabe"
