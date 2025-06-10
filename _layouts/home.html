@@ -1,172 +1,30 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}" {% if page.lang == 'ar' %}dir="rtl"{% endif %}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ page.subtitle | default: site.description }}">
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-    {%- comment -%} تحميل ملفات الترجمة حسب اللغة {%- endcomment -%}
-    {% capture lang_file %}/_data/translations/{{ page.lang | default: 'en' }}.yml{% endcapture %}
-    {% assign t = site.data.translations[page.lang | default: 'en'] %}
+---
 
-    <style>
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: #fdfdfd;
-        color: #222;
-      }
+title: AIC Magazine layout: home lang: en
 
-      header {
-        position: relative;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 2rem;
-      }
-
-      .language-selector {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-        background-color: #fff;
-        padding: 0.3rem 0.6rem;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        z-index: 1001;
-      }
-
-      .language-selector select {
-        border: none;
-        background: transparent;
-        font-size: 0.95rem;
-        font-weight: bold;
-        cursor: pointer;
-        direction: ltr;
-      }
-
-      .language-selector select:focus {
-        outline: none;
-      }
-
-      .language-icon {
-        font-size: 1.1rem;
-      }
-
-      .menu-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        font-size: 1.6rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-      }
-
-      .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #fff;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        padding: 1rem;
-        transition: left 0.3s ease;
-        z-index: 1000;
-      }
-
-      .sidebar.active {
-        left: 0;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 2.4rem;
-        color: #006699;
-        margin-bottom: 0.4rem;
-      }
-
-      h2 {
-        text-align: center;
-        font-size: 1.3rem;
-        color: #444;
-        font-weight: normal;
-      }
-
-      main {
-        padding-top: 1rem;
-        line-height: 1.7;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 3rem;
-        font-size: 0.9rem;
-        color: #aaa;
-      }
-    </style>
-
-    <script>
-      function changeLanguage(select) {
-        var lang = select.value;
-        if (lang === 'en') {
-          window.location.href = '/';
-        } else {
-          window.location.href = '/' + lang + '/';
-        }
-      }
-
-      function toggleSidebar() {
-        document.querySelector('.sidebar').classList.toggle('active');
-      }
-    </script>
-  </head>
-  <body>
-    <!-- زر القائمة الجانبية -->
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-
-    <!-- القائمة الجانبية -->
-    <div class="sidebar">
-      <h3>{{ t.menu_title | default: "Menu" }}</h3>
-      <ul>
-        <li><a href="/">{{ t.home | default: "Home" }}</a></li>
-        <li><a href="/about">{{ t.about | default: "About" }}</a></li>
-        <li><a href="/contact">{{ t.contact | default: "Contact" }}</a></li>
-        <!-- أضف المزيد حسب الحاجة -->
-      </ul>
-    </div>
-
-    <!-- زر اللغة -->
-    <div class="language-selector">
-      <span class="language-icon">🌐</span>
-      <select onchange="changeLanguage(this)">
-        <option value="en" {% if page.lang == 'en' %}selected{% endif %}>EN</option>
-        <option value="fr" {% if page.lang == 'fr' %}selected{% endif %}>FR</option>
-        <option value="ar" {% if page.lang == 'ar' %}selected{% endif %}>AR</option>
-      </select>
-    </div>
-
-    <header>
-      <h1>{{ page.title }}</h1>
-      <h2>{{ page.subtitle }}</h2>
-    </header>
-
-    <main>
-      {{ content }}
-    </main>
-
-    <footer>
-      &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
-    </footer>
-  </body>
-</html>
+<header>
+  <h1>{{ site.data.translations[page.lang].site_title }}</h1>
+  <p>{{ site.data.translations[page.lang].welcome_message }}</p>
+</header><nav>
+  <ul>
+    <li><a href="/{{ page.lang }}/about">{{ site.data.translations[page.lang].about_us }}</a></li>
+    <li><a href="/{{ page.lang }}/contact">{{ site.data.translations[page.lang].contact_us }}</a></li>
+  </ul>
+</nav><select onchange="location = '/' + this.value + window.location.pathname.replace(/^\/(en|ar|fr)/, '')">
+  <option value="en" {% if page.lang == 'en' %}selected{% endif %}>EN</option>
+  <option value="ar" {% if page.lang == 'ar' %}selected{% endif %}>AR</option>
+  <option value="fr" {% if page.lang == 'fr' %}selected{% endif %}>FR</option>
+</select><hr><!-- محتوى رئيسي للصفحة الرئيسية --><main>
+  <section>
+    <h2>{{ site.data.translations[page.lang].latest_articles }}</h2>
+    {% for post in site.posts %}
+      {% if post.lang == page.lang %}
+        <article>
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+</main>
