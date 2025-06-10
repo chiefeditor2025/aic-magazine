@@ -1,0 +1,16 @@
+title: AIC Magazine
+description: A multilingual scientific magazine
+baseurl: ""
+url: "https://yourdomain.com"
+lang: en
+languages: ["en", "fr", "ar"]
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      lang: "en"
+
+plugins:
+  - jekyll-multiple-languages-plugin
