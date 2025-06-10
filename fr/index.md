@@ -1,9 +1,9 @@
 ---
-layout: home
-title: Revue Scientifique AIC
-subtitle: La voix de la chimie appliquée et industrielle
+title: Bienvenue dans le magazine AIC
 lang: fr
-permalink: /fr/
+layout: home
 ---
 
-Bienvenue sur le site officiel de la revue scientifique AIC.
+{{ site.data.translations.fr.welcome_message }}
+{{ site.data.translations.fr.about_section }}
+{{ site.data.translations.fr.contact_section }}
