@@ -22,3 +22,41 @@
     </footer>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" {% if page.lang == 'ar' %}dir="rtl"{% endif %}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <h2>{{ site.data.translations[page.lang].welcome_message }}</h2>
+  </header>
+
+  <section>
+    <h3>{{ site.data.translations[page.lang].about_section }}</h3>
+    <p>{{ site.data.translations[page.lang].contact_section }}</p>
+  </section>
+
+  <!-- 👇 قسم المقالات المتعددة اللغات -->
+  <section>
+    <h3>{{ site.data.translations[page.lang].latest_articles }}</h3>
+    <ul>
+      {% for post in site.posts %}
+        {% if post.lang == page.lang %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer>
+    &copy; {{ site.time | date: '%Y' }} AIC Magazine. All rights reserved.
+  </footer>
+</body>
+</html>
