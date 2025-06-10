@@ -1,10 +1,9 @@
 ---
-layout: home
-title: المجلة العلمية AIC
-subtitle: صوت الكيمياء التطبيقية والصناعية
+title: مرحبًا بكم في مجلة AIC
 lang: ar
-dir: rtl
-permalink: /ar/
+layout: home
 ---
 
-مرحبًا بكم في الموقع الرسمي لمجلة AIC العلمية.
+{{ site.data.translations.ar.welcome_message }}
+{{ site.data.translations.ar.about_section }}
+{{ site.data.translations.ar.contact_section }}
