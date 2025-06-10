@@ -13,3 +13,27 @@ description: Voice of applied and industrial chemistry
 markdown: kramdown
 permalink: pretty
 theme: minima  # أو اتركه فارغًا لو تستخدم قالبك الخاص
+title: AIC Magazine
+description: A multilingual scientific magazine
+baseurl: ""  # إذا كنت تنشر في جذر الموقع
+url: "https://yourdomain.com"
+
+lang: en
+languages: ["en", "fr", "ar"]
+
+plugins:
+  - jekyll-multiple-languages-plugin
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "home"
+      lang: "en"
+
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: "post"
+      lang: "en"
