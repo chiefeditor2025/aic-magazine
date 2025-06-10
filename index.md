@@ -1,9 +1,9 @@
 ---
-layout: home
-title: AIC Scientific Magazine
-subtitle: The voice of applied and industrial chemistry
+title: Welcome to AIC Magazine
 lang: en
-permalink: /
+layout: home
 ---
 
-Welcome to the official website of AIC Scientific Magazine.
+{{ site.data.translations.en.welcome_message }}
+{{ site.data.translations.en.about_section }}
+{{ site.data.translations.en.contact_section }}
