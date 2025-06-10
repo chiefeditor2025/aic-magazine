@@ -1,29 +1,94 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}" {% if page.lang == 'ar' %}dir="rtl"{% else %}dir="ltr"{% endif %}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ page.subtitle | default: site.description }}">
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  </head>
-  <body>
-    <header>
-      <div class="language-switcher" style="text-align: right; padding: 0.5rem;">
-        <a href="/">EN</a> |
-        <a href="/fr/">FR</a> |
-        <a href="/ar/">AR</a>
+<html lang="{{ page.lang | default: 'en' }}" {% if page.lang == 'ar' %}dir="rtl"{% endif %}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.subtitle | default: site.description }}">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>
+    .language-dropdown {
+      position: relative;
+      display: inline-block;
+      float: right;
+      margin: 1rem;
+      z-index: 1000;
+    }
+    .language-dropdown button {
+      background-color: #006699;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .language-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      text-align: left;
+    }
+    .language-dropdown-content a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+    }
+    .language-dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown.show .language-dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="language-dropdown" id="lang-dropdown">
+      <button onclick="toggleLanguageMenu()">🌐 
+        {% if page.lang == 'ar' %}
+          العربية
+        {% elsif page.lang == 'fr' %}
+          Français
+        {% else %}
+          English
+        {% endif %}
+      </button>
+      <div class="language-dropdown-content">
+        <a href="/">English</a>
+        <a href="/fr/">Français</a>
+        <a href="/ar/">العربية</a>
       </div>
-      <h1>{{ page.title }}</h1>
-      <h2>{{ page.subtitle }}</h2>
-    </header>
+    </div>
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.subtitle }}</h2>
+  </header>
 
-    <main>
-      {{ content }}
-    </main>
+  <main>
+    {{ content }}
+  </main>
 
-    <footer>
-      &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
-    </footer>
-  </body>
+  <footer>
+    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleLanguageMenu() {
+      document.getElementById("lang-dropdown").classList.toggle("show");
+    }
+
+    // Close menu if clicked outside
+    document.addEventListener("click", function(event) {
+      var dropdown = document.getElementById("lang-dropdown");
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("show");
+      }
+    });
+  </script>
+</body>
 </html>
