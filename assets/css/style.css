@@ -135,3 +135,53 @@ body[dir="rtl"] {
   text-align: right;
   font-family: 'Cairo', 'Amiri', sans-serif;
 }
+.menu-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  {% if page.lang == 'ar' %}
+  right: 1rem;
+  {% else %}
+  left: 1rem;
+  {% endif %}
+  z-index: 1001;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  {% if page.lang == 'ar' %}
+  right: 0;
+  {% else %}
+  left: 0;
+  {% endif %}
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  border-{{ page.lang == 'ar' ? 'left' : 'right' }}: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding: 2rem 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #006699;
+  font-weight: bold;
+}
