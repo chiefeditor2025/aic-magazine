@@ -1,3 +1,8 @@
-welcome_message: "Welcome to the official site of AIC Magazine."
-about_section: "About us: AIC Magazine provides the latest scientific news and research."
-contact_section: "Contact us: You can reach us at contact@aic-magazine.com."
+site_title: "AIC Magazine"
+welcome_message: "Welcome to our multilingual scientific magazine"
+latest_articles: "Latest Articles"
+menu:
+  home: "Home"
+  about: "About"
+  contact: "Contact"
+footer: "All rights reserved"
