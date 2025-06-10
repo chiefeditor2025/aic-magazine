@@ -1,3 +1,26 @@
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <h2>{{ site.data.translations[page.lang].welcome_message }}</h2>
+
+    <!-- زر اختيار اللغة -->
+    <select onchange="changeLanguage(this)">
+      <option value="en" {% if page.lang == 'en' %}selected{% endif %}>EN</option>
+      <option value="fr" {% if page.lang == 'fr' %}selected{% endif %}>FR</option>
+      <option value="ar" {% if page.lang == 'ar' %}selected{% endif %}>AR</option>
+    </select>
+  </header>
+
+  <!-- باقي الصفحة -->
+  ...
+  
+  <script>
+    function changeLanguage(select) {
+      var lang = select.value;
+      window.location.href = '/' + lang + '/';
+    }
+  </script>
+</body>
 <header>
   <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
 </header>
