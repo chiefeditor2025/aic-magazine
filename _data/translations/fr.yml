@@ -1,0 +1,6 @@
+hello: "Bienvenue"
+subtitle: "Un magazine scientifique multilingue"
+menu:
+  home: "Accueil"
+  about: "À propos"
+  contact: "Contact"
