@@ -1,6 +1,20 @@
-hello: "مرحبًا"
+site_title: "مجلة AIC"
 subtitle: "مجلة علمية متعددة اللغات"
+welcome_message: "مرحبًا بك في مجلة AIC"
+
 menu:
   home: "الرئيسية"
-  about: "حول"
+  about: "حول المجلة"
   contact: "اتصل بنا"
+
+home:
+  title: "الرئيسية"
+  latest_articles: "أحدث المقالات"
+  read_more: "اقرأ المزيد"
+
+footer: "جميع الحقوق محفوظة."
+language:
+  select: "اللغة"
+  en: "الإنجليزية"
+  fr: "الفرنسية"
+  ar: "العربية"
